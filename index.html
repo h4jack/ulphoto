@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title - Please Include</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 500px) {
+            .container {
+                width: 300px;
+            }
+
+            .image-output {
+                background-color: #02326222;
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>UlPhoto - Photo Cloud</h2>
+    <div class="image-output flex-column">
+        <span>File URL: (Click to Copy)</span>
+        <a href="" class="file-url">https://giigisldk.coas.sd/qwer/vdsd.gif</a>
+    </div>
+    <div class="container flex-column">
+        <div class="upload-box flex-column">
+            <p class="file-name-message">Click to select a file or Drag and Drop file to upload.</p>
+            <input type="file" name="image_file" class="file_upload_input">
+        </div>
+        <div class="image_view flex-column"></div>
+        <div class="upload-btn flex-row">
+            <button type="submit" style="cursor: pointer;" onclick="uploadClicked()">Upload</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

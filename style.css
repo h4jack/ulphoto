@@ -1,0 +1,96 @@
+.flex-row,
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #02326222;
+    width: 400px;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.image_view,
+.upload-box {
+    width: 100%;
+    height: 200px;
+}
+
+.upload-box {
+    position: relative;
+}
+
+.file-name-message {
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.file_upload_input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.image_view {
+    background-color: #ffffff70;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.upload-btn {
+    width: 100%;
+    height: 10%;
+}
+
+.upload-btn>button {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #70c68880;
+    border-radius: 5px;
+    border: none;
+}
+
+.image-output {
+    box-sizing: border-box;
+    display: none;
+    background-color: #02326222;
+    width: 400px;
+    justify-content: start;
+    align-items: start;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.file-url {
+    word-break: break-all;
+}
