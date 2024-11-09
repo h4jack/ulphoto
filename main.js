@@ -98,5 +98,5 @@ file_input.addEventListener('dragleave', () => {
     image_view.style.backgroundSize = "contain";
     image_view.style.border = "none";
     image_view.style.backgroundImage = "url(./assets/image-file.svg)";
-    file_name_message.textContent = "Click to select or Drag and Drop file to upload."; // Reset to default message
+    file_name_message.textContent = "Click to select file or Drag and Drop to upload."; // Reset to default message
 });
