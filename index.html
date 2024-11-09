@@ -6,25 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulphoto - Photo Link</title>
     <link rel="stylesheet" href="style.css?v1.0">
-    <style>
-        @media (max-width: 500px) {
-            .container {
-                width: 300px;
-            }
-
-            .image-output {
-                background-color: #02326222;
-                width: 300px;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <h2>UlPhoto - Photo Cloud</h2>
     <div class="image-output flex-column">
-        <span>File URL: (Click to Copy)</span>
-        <a href="" class="file-url">https://giigisldk.coas.sd/qwer/vdsd.gif</a>
+        <!-- <span>link:</span> -->
+        <input class="file-url" value="https://example.com/image.jpg"></input>
+        <button id="copy-btn" onclick="handleCopy()" title="Copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+          </svg>
+        </button>
+        <div class="message-alert">Copied!</div>
     </div>
     <div class="container flex-column">
         <div class="flex-column" style="
@@ -35,6 +29,7 @@
                 <p class="file-name-message">Click to select a file or Drag and Drop file to upload.</p>
             </div>
             <div class="image_view flex-column"></div>
+            <!-- <input type="file" title="select file"> -->
             <input type="file" name="image_file" class="file_upload_input"
                 title="Select A file or Drag and Drop the file.">
         </div>
@@ -44,8 +39,7 @@
         <div class="reload-box flex-column">
             <div class="reload-icon"></div>
             <br>
-            <span class="text">Uploading..</span>
-            <span class="text">Please Wait.</span>
+            <span class="text">Uploading...</span>
         </div>
     </div>
     <script src="main.js?v1.0"></script>
