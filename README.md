@@ -26,5 +26,5 @@ Please adhere to this project's `code of conduct`.
 - [@arjun6757](https://www.github.com/arjun6757)
 ## License
 
-The License Under which this repo is [MIT](https://github.com/h4jack/ulphoto/LICENSE/)
+The License Under which this repo is [MIT](https://github.com/h4jack/ulphoto/blob/main/LICENSE/)
 
