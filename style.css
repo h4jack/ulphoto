@@ -29,6 +29,10 @@ body {
     background-color: #f7f7f7;
 }
 
+h2 {
+    font-weight: 600;
+}
+
 .container {
     position: relative;
     background-color: #fff;
