@@ -1,10 +1,28 @@
 const file_input = document.querySelector(".file_upload_input");
 const file_name_message = document.querySelector(".file-name-message");
 const image_view = document.querySelector(".image_view");
+const copy = document.getElementById("copy-btn");
+image_view.style.backgroundColor = "#f7f7f7";
 
-document.querySelector(".image-output").addEventListener("click", () => {
-    navigator.clipboard.writeText(document.querySelector(".file-url").href);
-})
+const handleCopy = () => {
+    //copy logic
+    navigator.clipboard.writeText(document.querySelector(".file-url").value);
+    
+    copy.disabled = "true";
+    copy.style.backgroundColor = "#999999";
+    const messageAlert = document.querySelector(".message-alert");
+    messageAlert.style.display = "flex";
+    setTimeout(() => {
+        messageAlert.style.display = "";
+        copy.disabled = "";
+        copy.style.backgroundColor = "";
+    }, 3000);
+}
+
+//not needed anymore
+// document.querySelector(".image-output").addEventListener("click", () => {
+//     navigator.clipboard.writeText(document.querySelector(".file-url").value);
+// })
 
 async function uploadImage(imageData) {
     document.querySelector(".reload-box").style.display = "flex";
@@ -29,8 +47,8 @@ async function uploadImage(imageData) {
         // Parse the JSON response
         const result = await response.json();
         document.querySelector(".image-output").style.display = "flex";
-        document.querySelector(".file-url").textContent = result.data.display_url;
-        document.querySelector(".file-url").href = result.data.display_url;
+        document.querySelector(".file-url").value = result.data.display_url;
+        // document.querySelector(".file-url").href = result.data.display_url;
     } catch (error) {
         console.error('Error uploading image:', error);
     }
@@ -46,6 +64,7 @@ function uploadClicked() {
 
 file_input.addEventListener('change', function (event) {
     const file = event.target.files[0]; // Get the selected file (first file if multiple are selected)
+    image_view.style.border = "";
     if (file && file.size > 10000000) { // Check if file size exceeds 5MB
         file_name_message.textContent = `File size is too large please select a file under 10MB. your file size is ${(file.size / 1000000).toFixed(2)}MB`;
         return;
@@ -63,17 +82,21 @@ file_input.addEventListener('change', function (event) {
     }
 });
 
-// Handle drag over event
+// Handle drag over event   //when dragging over the input area
 file_input.addEventListener('dragover', (e) => {
     e.preventDefault();
-    file_name_message.textContent = "yea yea, Drop here,";
+    file_name_message.textContent = "Drop here to upload";
+    const emoji = "(∩^o^)⊃━☆";
+    file_name_message.textContent += " " + emoji;
     image_view.style.backgroundSize = "35%";
+    image_view.style.border = "1px dashed #333";
     image_view.style.backgroundImage = "url(./assets/file-upload.svg)";
 });
 
 // Handle drag leave event (when dragging leaves the input area)
 file_input.addEventListener('dragleave', () => {
     image_view.style.backgroundSize = "contain";
+    image_view.style.border = "none";
     image_view.style.backgroundImage = "url(./assets/image-file.svg)";
-    file_name_message.textContent = "Click to select a file or Drag and Drop file to upload."; // Reset to default message
+    file_name_message.textContent = "Click to select or Drag and Drop file to upload."; // Reset to default message
 });
