@@ -56,7 +56,24 @@ file_input.addEventListener('change', function (event) {
         reader.onload = function (e) {
             // Set the background image to the data URL of the file
             image_view.style.backgroundImage = `url(${e.target.result})`;
+            image_view.style.backgroundSize = "contain";
+            document.querySelector(".upload-btn").style.display = "flex";
         };
         reader.readAsDataURL(file); // Read the file as a data URL
     }
+});
+
+// Handle drag over event
+file_input.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    file_name_message.textContent = "yea yea, Drop here,";
+    image_view.style.backgroundSize = "35%";
+    image_view.style.backgroundImage = "url(./assets/file-upload.svg)";
+});
+
+// Handle drag leave event (when dragging leaves the input area)
+file_input.addEventListener('dragleave', () => {
+    image_view.style.backgroundSize = "contain";
+    image_view.style.backgroundImage = "url(./assets/image-file.svg)";
+    file_name_message.textContent = "Click to select a file or Drag and Drop file to upload."; // Reset to default message
 });

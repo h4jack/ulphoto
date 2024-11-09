@@ -27,11 +27,17 @@
         <a href="" class="file-url">https://giigisldk.coas.sd/qwer/vdsd.gif</a>
     </div>
     <div class="container flex-column">
-        <div class="upload-box flex-column">
-            <p class="file-name-message">Click to select a file or Drag and Drop file to upload.</p>
-            <input type="file" name="image_file" class="file_upload_input">
+        <div class="flex-column" style="
+            position: relative;
+            width: 100%;
+            ">
+            <div class="flex-column">
+                <p class="file-name-message">Click to select a file or Drag and Drop file to upload.</p>
+            </div>
+            <div class="image_view flex-column"></div>
+            <input type="file" name="image_file" class="file_upload_input"
+                title="Select A file or Drag and Drop the file.">
         </div>
-        <div class="image_view flex-column"></div>
         <div class="upload-btn flex-row">
             <button type="submit" style="cursor: pointer;" onclick="uploadClicked()">Upload</button>
         </div>
