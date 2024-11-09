@@ -7,6 +7,7 @@ document.querySelector(".image-output").addEventListener("click", () => {
 })
 
 async function uploadImage(imageData) {
+    document.querySelector(".reload-box").style.display = "flex";
     const url = "https://api.imgbb.com/1/upload?expiration=600&key=b01f38496c2d894da1a3bda80692d982";
 
     // Create a FormData object
@@ -33,6 +34,7 @@ async function uploadImage(imageData) {
     } catch (error) {
         console.error('Error uploading image:', error);
     }
+    document.querySelector(".reload-box").style.display = "none";
 }
 
 function uploadClicked() {
