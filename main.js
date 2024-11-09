@@ -16,7 +16,7 @@ const handleCopy = () => {
         messageAlert.style.display = "";
         copy.disabled = "";
         copy.style.backgroundColor = "";
-    }, 3000);
+    }, 2000);
 }
 
 //not needed anymore
