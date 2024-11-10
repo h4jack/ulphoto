@@ -19,11 +19,6 @@ const handleCopy = () => {
     }, 2000);
 }
 
-//not needed anymore
-// document.querySelector(".image-output").addEventListener("click", () => {
-//     navigator.clipboard.writeText(document.querySelector(".file-url").value);
-// })
-
 async function uploadImage(imageData) {
     document.querySelector(".reload-box").style.display = "flex";
     const url = "https://api.imgbb.com/1/upload?expiration=0&key=b01f38496c2d894da1a3bda80692d982";
@@ -48,7 +43,6 @@ async function uploadImage(imageData) {
         const result = await response.json();
         document.querySelector(".image-output").style.display = "flex";
         document.querySelector(".file-url").value = result.data.display_url;
-        // document.querySelector(".file-url").href = result.data.display_url;
     } catch (error) {
         console.error('Error uploading image:', error);
     }
@@ -98,5 +92,5 @@ file_input.addEventListener('dragleave', () => {
     image_view.style.backgroundSize = "contain";
     image_view.style.border = "none";
     image_view.style.backgroundImage = "url(./assets/image-file.svg)";
-    file_name_message.textContent = "Click to select file or Drag and Drop to upload."; // Reset to default message
+    file_name_message.textContent = "Tap to choose a file or simply drag and drop to upload!"; // Reset to default message
 });

@@ -133,41 +133,21 @@ h2 {
     background-color: #1263db;
 }
 
-.copy-section {
-    position: relative;
-    border: 1px solid black;
-}
-
-.wrapper-alert {
-    /* display: none; */
-    box-sizing: border-box;
-    position: fixed;
-    width: 100vw;
-    bottom: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
 .message-alert {
     display: none;
-    font-size: 14px;
-    background-color: #171717;
-    font-weight: 400;
+    top: 90%;  
+    /* goes to the bottom-most of the container */
+    left: 100%; 
+    /* goes to the right-most of the container */
+    position: absolute;
+    transform: translateX(-100%); 
+    /*it is minusing 100% of its own width to stay below the last element of the container which is the copy btn in this case*/
+    background-color: #999999;
     color: #e7e7e7;
-    padding: 7px;
-    border-radius: 15px;
-    text-align: center;
-    /* display: flex; */
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-}
-
-.message-alert svg {
-    fill: #4CAF50;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 9999;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .file-url {
@@ -218,8 +198,12 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-    .container, .image-output {
+    .container {
         width: 65vw;
         font-size: 14px;
+    }
+
+    .image-output {
+        width: 80vw;
     }
 }
